@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-slate-800 font-sans antialiased;
+  }
+
+  .dark body {
+    @apply bg-[#0b0f1a] text-slate-200;
+  }
+
+  /* Section scroll offset so sticky nav doesn't cover headings */
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+
+  ::selection {
+    @apply bg-accent/30 text-white;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-600/50 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-500/70;
+  }
+}
+
+@layer components {
+  /* Glass card surface */
+  .glass {
+    @apply rounded-2xl border border-slate-200/70 bg-white/70 backdrop-blur-md shadow-card;
+  }
+  .dark .glass {
+    @apply border-white/10 bg-white/5;
+  }
+
+  /* Gradient text */
+  .text-gradient {
+    @apply bg-accent-gradient bg-clip-text text-transparent;
+    background-size: 200% auto;
+  }
+
+  /* Section heading */
+  .section-title {
+    @apply font-display text-3xl sm:text-4xl font-bold tracking-tight;
+  }
+
+  /* Pill / badge */
+  .badge {
+    @apply inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium
+      border-slate-300 bg-slate-100 text-slate-600;
+  }
+  .dark .badge {
+    @apply border-white/10 bg-white/5 text-slate-300;
+  }
+
+  /* Primary gradient button */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold
+      text-white bg-accent-gradient bg-[length:200%_auto] shadow-glow
+      transition-[background-position,transform] duration-300 hover:bg-[position:right_center]
+      hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2
+      focus-visible:ring-offset-white dark:focus-visible:ring-offset-[#0b0f1a];
+  }
+
+  /* Slim, rounded scrollbar for horizontal strips (thumbnails) */
+  .thin-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(148, 163, 184, 0.45) transparent;
+  }
+  .thin-scrollbar::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+  }
+  .thin-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .thin-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.4);
+    border-radius: 9999px;
+  }
+  .thin-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(148, 163, 184, 0.7);
+  }
+
+  /* Ghost button */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold
+      border border-slate-300 text-slate-700 transition-colors duration-200 hover:border-accent hover:text-accent
+      dark:border-white/15 dark:text-slate-200 dark:hover:border-accent dark:hover:text-white;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
