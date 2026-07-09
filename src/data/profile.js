@@ -8,13 +8,12 @@ export const profile = {
   roles: [
     'React Frontend Developer',
     'MERN Stack Developer',
-    'Next.js & Tailwind',
     'Full Stack Engineer',
   ],
   location: 'Alexandria, Egypt',
   email: 'ahmed.ramadan.professional@gmail.com',
-  bio: `Experienced full stack developer with 2+ years of experience specializing in modern web applications using MERN, Laravel, and Next.js. Proficient in building scalable systems, developing responsive user interfaces, and deploying production-ready solutions. Skilled in optimizing performance and improving user experience. Seeking to leverage technical expertise to build efficient, reliable, and high-quality web applications.`,
-  shortBio: `Full stack developer specializing in MERN, Laravel and Next.js.`,
+  bio: `Experienced full stack developer with 2+ years of experience specializing in modern web applications using MERN, and Laravel. Proficient in building scalable systems, developing responsive user interfaces, and deploying production-ready solutions. Skilled in optimizing performance and improving user experience. Seeking to leverage technical expertise to build efficient, reliable, and high-quality web applications.`,
+  shortBio: `Full stack developer specializing in MERN, and Laravel.`,
   socials: {
     github: 'https://github.com/ahmed-ramadan-professional/',
     linkedin: 'https://www.linkedin.com/in/ahmed-ramadan-professional/',
